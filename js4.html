@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!-- <style>
+	#box{
+		/*position:relative;*/
+		width:300px;
+		height:300px;
+		background:red;
+	}
+	#box2{
+		position:absolute;
+		width:100px;
+		height:100px;
+		background:blue;
+	}
+</style> -->
+<script>
+	window.onload=function(){
+		//给行加颜色
+		// var oul =document.getElementById('fox');
+		// for (var i =0;i<oul.children.length; i++) {
+		//  	 if(oul.children[i].nodeType==1){
+		//  	 	oul.children[2].style.background='pink'	
+		//  }
+		// }
+
+		//删除行
+		// var arr=document.getElementsByTagName('a')
+		// for (var i = 0; i < arr.length; i++) {
+		// 	 arr[i].onclick=function(){
+		// 	this.parentNode.style.display = 'none'
+		// }
+		// }	
+	// var box =document.getElementById('box2');
+	//  // alert(box.parentNode)
+	//  alert(box.offsetParent)
+
+	var ali =document.getElementsByTagName('li');
+	for (var i = 0; i < ali.length; i++) {
+		ali[i].onclick=function(){
+			if (this.nextElementSibling) {
+				alert(this.nextElementSibling.innerText);
+			}else {
+				alert(this.nextSibling.innerText);
+			}
+		}
+	}
+	}
+</script>
+<body>
+	<!-- <ul id="fox">
+		<li>qweowqeqwe</li>
+		<li>qweowqeqwe</li>
+		<li>qweowqeqwe</li>
+	</ul> -->
+<!-- 		<ul id="dox">
+		<li>qweowqeqwe 1<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 2<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 3<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 4<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 5<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 6<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 7<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 8<a href="javascript:(0);">删除</a></li>
+		<li>qweowqeqwe 9<a href="javascript:(0);">删除</a></li>
+	</ul> -->
+	
+	<!-- <div id="box">
+		<div id="box2"></div>
+	</div> -->
+
+<ul id="qox">
+		<li>qweowqeqwe1</li>
+		<li>qweowqeqwe2</li>
+		<li>qweowqeqwe3</li>
+	</ul>
+</body>
+</html>

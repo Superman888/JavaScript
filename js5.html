@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload=function(){
+			var ipt =document.getElementById('inp');
+			var otab =document.getElementById('tab');
+			var obut =document.getElementById('but');
+			var oput =document.getElementById('put');
+			var oput1 =document.getElementById('put1');
+			var off=otab.tBodies[0].rows.length;
+			// var row=otab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[0];
+			// var row=otab.tBodies[0].rows[0].cells[1].innerText;
+			var trs=otab.tBodies[0].rows;
+			// inp.onclick=function(){
+			// 	// row.style.display='none';
+			// 	alert(row)
+			// }
+			// inp1.onclick=function(){
+			// 	row.style.display='table-row';
+			// }
+
+			//隔行变色和鼠标放上去变色
+			var oldColor =null;
+			for (var i = 0; i < trs.length; i++) {
+				if (i%2!=0) {
+					trs[i].style.background='red';
+				}
+				trs[i].onmouseover=function(){
+					oldColor=this.style.background;
+					this.style.backgroundColor='yellow';
+				}
+				trs[i].onmouseout=function(){
+					this.style.backgroundColor=oldColor;
+				}
+			}
+
+		obut.onclick=function(){		
+	    var otr = document.createElement('tr');
+	    var otd1 =document.createElement('td');
+	    		otd1.innerHTML=++off;
+	    var otd2=document.createElement('td');
+	        otd2.innerHTML=oput.value;
+	    var otd3=document.createElement('td');
+	    		otd3.innerHTML=oput1.value;
+	    var otd4=document.createElement('td');
+	    		otd4.innerHTML='<a href="javascript:0;">dale</a>';
+	    		otr.appendChild(otd1);
+	    		otr.appendChild(otd2);
+	    		otr.appendChild(otd3);
+	    		otr.appendChild(otd4);
+	    		otab.tBodies[0].appendChild(otr);
+	    		for (var i = 0; i < trs.length; i++) {
+				if (i%2!=0) {
+					trs[i].style.background='red';
+				}
+				trs[i].onmouseover=function(){
+					oldColor=this.style.background;
+					this.style.backgroundColor='yellow';
+				}
+				trs[i].onmouseout=function(){
+					this.style.backgroundColor=oldColor;
+				}
+			}
+	    			var arr=otab.tBodies[0].getElementsByTagName('a');
+			 for (var i = 0; i < arr.length; i++) {
+			 	arr[i].onclick=function(){
+			 		otab.tBodies[0].removeChild(this.parentNode.parentNode)
+			 	}
+			 }
+		}
+			//删除行
+			var arr=otab.tBodies[0].getElementsByTagName('a');
+			 for (var i = 0; i < arr.length; i++) {
+			 	arr[i].onclick=function(){
+			 		otab.tBodies[0].removeChild(this.parentNode.parentNode)
+			 	}
+			 }
+			
+			 var obtn=document.getElementById('inp');
+			 var oname =null;
+			 var innerName=otab.tBodies[0].rows;
+			 	obtn.onclick=function(){
+			 		oname=document.getElementById('name');
+			 		 for (var i = 0; i < innerName.length; i++) {
+			 	  if (otab.tBodies[0].rows[i].cells[1].innerText==oname.value) {
+			 	  	 otab.tBodies[0].rows[i].style.background='pink';
+			 	  }
+			 	}
+		 }
+	}
+	</script>
+	<style>
+		table tr td{
+		/*	overflow:hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;*/
+		}
+	</style>
+</head>
+<body>
+name:<input type="text" id="put"> gae <input type="text" id="put1"><input type="button" id="but" value="创建">
+<br>	
+<input type="text" id="name">
+<input type="button" id="inp" value="create">
+<!-- <input type="button" id="inp1" value="show"> -->
+<table id="tab" style="text-align:center;border-collapse: collapse;table-layout:fixed;" border="1px solid black" cellspacing="0" width="500" >
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>hg</th>
+		<th>Age</th>
+		<th>Operation</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>1</td>
+		<td >wow</td>
+		<td>24</td>
+		<td><a href="javasript:;">dale</a></td>
+	</tr>
+		<tr>
+		<td>2</td>
+		<td>qwe</td>
+		<td>24</td>
+			<td><a href="javasript:;">dale</a></td>
+	</tr>
+		<tr>
+		<td>3</td>
+		<td>er</td>
+		<td>24</td>
+		<td><a href="javasript:;">dale</a></td>
+	</tr>
+		<tr>
+		<td>4</td>
+		<td>df</td>
+		<td>24</td>
+			<td><a href="javasript:;">dale</a></td>
+	</tr>
+		<tr>
+		<td>5</td>
+		<td>sd</td>
+		<td>24</td>
+		<td><a href="javasript:;">dale</a></td>
+	</tr>
+</tbody>
+</table>
+</body>
+</html>	

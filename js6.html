@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#fox{
+			width:100px;
+			height:100px;
+			background:red;
+			position:absolute;
+			left:0;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var obut=document.getElementById('but');
+			var ofox=document.getElementById('fox');
+			var obtn=document.getElementById('btn');
+			var time =null;
+			var num =null;
+			obut.onclick=function(){
+				clearInterval(time);
+		 	 time =setInterval(function(){
+		  	if (parseInt(ofox.style.left)==300) {
+		  		clearInterval(time)
+		  	}else {
+		  			ofox.style.left=ofox.offsetLeft+5+'px';
+		  	}
+		  },30)
+		}	
+		btn.onclick=function(){
+			clearInterval(time);
+		var	num=-5;
+			time =setInterval(function(){
+		  	if (parseInt(ofox.style.left)<=0) {
+		  		clearInterval(time)
+		  	}else {
+		  			ofox.style.left=ofox.offsetLeft+num+'px';
+		  	}
+		  },30)
+		}
+	}
+				// ofox.style.left=ofox.offsetLeft+10+"px";
+			
+				// alert(getStyle(ofox,'left'))
+		
+
+		  // function getStyle(arr,nodeName){
+		  // 	if (window.getComputedStyle) {
+		  // 		return window.getComputedStyle(arr,false)[nodeName];
+		  // 	}else{
+		  // 		return arr.currentStyle[nodeName]
+		  // 	}
+		  // }
+
+	</script>
+</head>
+<body>                                  <!-- get显示账户和密码 -->
+<form action="https://www.baidu.com" method="post">
+	name:<input type="text" name="usename">
+	password:<input type="password" name="password">
+	<input type="submit" name="">
+</form>
+ <button id="but">左边</button>
+ <button id='btn'>右边</button>
+	<div id='fox'></div>
+</body>
+</html>
