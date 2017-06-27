@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			position: absolute;
+			width: 300px;
+			height:300px;
+			background:red;
+		}
+		#fox{
+			width:200px;
+			height: 200px;
+			background:pink;
+		}
+		#dox{
+			width: 100px;
+			height: 100px;
+			background:blue;
+		}
+	</style>
+	<script>
+	window.onload =function(){
+		var obox =document.getElementById('box');
+		var ofox =document.getElementById('fox');
+		var odox =document.getElementById('dox');
+
+   document.getElementById('dox').onclick= function stopBubble(e) {
+   				alert('dox')
+        //如果提供了事件对象，则这是一个非IE浏览器
+        if ( e && e.stopPropagation )
+            //因此它支持W3C的stopPropagation()方法
+            e.stopPropagation();
+        else
+            //否则，我们需要使用IE的方式来取消事件冒泡
+            window.event.cancelBubble = true;
+    }
+       function stopDefault( e ) {
+        //阻止默认浏览器动作(W3C)
+        if ( e && e.preventDefault )
+            e.preventDefault();
+        //IE中阻止函数器默认动作的方式
+        else
+            window.event.returnValue = false;
+        return false;
+    }
+
+	// 	document.onmousemove =function(e){
+	// 		var oEvent = e||event;
+	// 		var scroll =document.documentElement.scrollTop||document.body.scrollTop;
+	// 		box.style.left=oEvent.clientX+'px';
+	// 		box.style.top =oEvent.clientY+scroll+'px';
+	// }
+
+	// document.onkeydown=function(e){
+	// 	var o = e||event;
+	// 	if(o.keyCode)
+	// }
+}
+	</script>
+</head>
+<body>
+ <div id="box" onclick= "alert('box')">
+ 	<div id="fox" onclick= "alert('fox')">
+ 		<div id="dox"  onclick= "alert('dox')">
+ 			
+ 		</div>
+ 	</div>
+ </div>
+</body>
+</html>

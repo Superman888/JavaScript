@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload=function(){
+
+			var obtn =document.getElementById('btn');
+			var oul = document.getElementById('fox');
+			obtn.onclick=function(){
+			var oli = oul.getElementsByTagName('li');
+			var arr = [];
+			for (var i = 0; i < oli.length; i++) {
+				arr[i]=oli[i].innerText;
+			} 
+			arr.sort(function(ies,wos){
+				return ies-wos;
+			})
+			for (var s = 0; s < arr.length; s++) {
+				oli[s].innerText=arr[s];
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<button id="btn">排序</button>
+	<ul id="fox">
+		<li>23</li>
+		<li>34</li>
+		<li>49</li>
+		<li>192</li>
+		<li>135</li>
+		<li>58</li>
+	</ul>
+</body>
+</html>
